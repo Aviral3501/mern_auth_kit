@@ -148,7 +148,6 @@ export const logout = async (req, res) => {
 export const forgotPassword = async (req, res) => {
 	const { email } = req.body; // Get email from request body
 	try {
-		// Find user by email
 		const user = await User.findOne({ email });
 
 		if (!user) {
