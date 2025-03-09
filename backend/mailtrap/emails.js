@@ -9,6 +9,8 @@ export const sendVerificationEmail = async (email, verificationToken) => {
 	const recipient = [{ email }];
 
 	try {
+
+        // repalce the verfication token placeholder in the template with the actual verfification token 
 		const response = await mailtrapClient.send({
 			from: sender,
 			to: recipient,
