@@ -96,8 +96,8 @@ export const verifyEmail = async (req, res) => {
 			},
 		});
 	} catch (error) {
-		console.log("error in verifyEmail ", error); // Log error
-		res.status(500).json({ success: false, message: "Server error" }); // Handle server errors
+		console.log("error in verifyEmail ", error); 
+		res.status(500).json({ success: false, message: "Server error" }); 
 	}
 };
 
@@ -132,8 +132,8 @@ export const login = async (req, res) => {
 			},
 		});
 	} catch (error) {
-		console.log("Error in login ", error); // Log error
-		res.status(400).json({ success: false, message: error.message }); // Handle errors
+		console.log("Error in login ", error); 
+		res.status(400).json({ success: false, message: error.message }); 
 	}
 };
 
@@ -169,8 +169,8 @@ export const forgotPassword = async (req, res) => {
 
 		res.status(200).json({ success: true, message: "Password reset link sent to your email" });
 	} catch (error) {
-		console.log("Error in forgotPassword ", error); // Log error
-		res.status(400).json({ success: false, message: error.message }); // Handle errors
+		console.log("Error in forgotPassword ", error); 
+		res.status(400).json({ success: false, message: error.message }); 
 	}
 };
 
@@ -202,8 +202,8 @@ export const resetPassword = async (req, res) => {
 
 		res.status(200).json({ success: true, message: "Password reset successful" });
 	} catch (error) {
-		console.log("Error in resetPassword ", error); // Log error
-		res.status(400).json({ success: false, message: error.message }); // Handle errors
+		console.log("Error in resetPassword ", error); 
+		res.status(400).json({ success: false, message: error.message }); 
 	}
 };
 
@@ -218,7 +218,7 @@ export const checkAuth = async (req, res) => {
 
 		res.status(200).json({ success: true, user }); // Return user information
 	} catch (error) {
-		console.log("Error in checkAuth ", error); // Log error
-		res.status(400).json({ success: false, message: error.message }); // Handle errors
+		console.log("Error in checkAuth ", error); 
+		res.status(400).json({ success: false, message: error.message }); 
 	}
 };
