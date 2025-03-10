@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import FloatingShape from "./components/FloatingShape";
 
-import SignUpPage from "./pages/SignUpPage";
+import SignUpPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import DashboardPage from "./pages/DashboardPage";
@@ -22,9 +22,9 @@ const ProtectedRoute = ({ children }) => {
 		return <Navigate to='/login' replace />;
 	}
 
-	// if (!user.isVerified) {
-	// 	return <Navigate to='/verify-email' replace />;
-	// }
+	if (!user.isVerified) {
+		return <Navigate to='/verify-email' replace />;
+	}
 
 	return children;
 };
@@ -83,7 +83,7 @@ function App() {
 						</RedirectAuthenticatedUser>
 					}
 				/>
-				{/* <Route path='/verify-email' element={<EmailVerificationPage />} /> */}
+				<Route path='/verify-email' element={<EmailVerificationPage />} />
 				<Route
 					path='/forgot-password'
 					element={
